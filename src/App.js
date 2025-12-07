@@ -36,7 +36,8 @@ export default function App() {
             <div className={`${step >= 3 ? "active" : ""}`}>3</div>
           </div>
           <p className="message">
-            step{step}: {msgCount}
+            <StepMess step={step}> {msgCount}</StepMess>
+            {/* step{step}: */}
           </p>
 
           <div className="buttons">
@@ -49,6 +50,20 @@ export default function App() {
           </div>
         </div>
       )}
+    </>
+  );
+}
+function StepMess({ step, children }) {
+  return (
+    <>
+      <h3>step {step}</h3> <span>{children}</span>
+      {/* <Button
+        bgColor="#e7e7e7"
+        textColor="#333"
+        onClick={() => alert("Lern more about childern props")}
+      >
+        Lern How
+      </Button> */}
     </>
   );
 }
